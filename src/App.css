@@ -37,3 +37,12 @@ img {
 .site-info h1 {
   margin-bottom: 20px;
 }
+/*  */
+.section-title {
+  text-align: center;
+}
+.last-news,
+.last-films {
+  color: #333;
+  text-align: center;
+}

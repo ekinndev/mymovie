@@ -10,7 +10,11 @@ function Landing({ siteTitle = 'My Movie', siteDesc = 'Sadece göründüğü gib
           <p className='lead'>{siteDesc}</p>
         </div>
       </div>
+      <section className='last-films'>
     </div>
+      </section>
+      <section className='last-news my-2'>
+      </section>
   );
 }
 
