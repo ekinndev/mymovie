@@ -1,4 +1,9 @@
 @import 'reset.css';
+html {
+  font-family: 'Manrope', sans-serif;
+  font-display: swap;
+  font-size: 10px;
+}
 /* Landing */
 .landing {
   background: url('./img/landing.jpg') no-repeat center center / cover;
