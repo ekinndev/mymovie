@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap');
 
 .backdrop {
-  position: fixed;
-  z-index: 3;
+  position: absolute;
   left: 0;
   top: 0;
   width: 100%;
@@ -96,3 +95,4 @@
   padding: 5rem 0;
 }
 /*  */
+
