@@ -76,14 +76,14 @@ const salonlar = [
   {
     id: 3,
     salon_adi: '4DX',
-    salon_aciklama: '4DX ile Filmi Yaşamaya Hazır Mısın?',
+    salon_aciklama: '4DX ile Filmi Yaşamaya Hazırsın',
     salon_img: 'https://media.cinemaximum.com.tr/1110//Files/Teknolojiler/4DX.jpg',
     ozellikler: ['4D', 'SU Efekti', 'Işık Efekti', 'Titreşim', 'Koku']
   },
   {
     id: 4,
     salon_adi: 'IMAX',
-    salon_aciklama: 'IMAX Sinema Sistemi',
+    salon_aciklama: 'IMAX Sinema Sistemi Kullanıma Sunuldu',
     salon_img: 'https://media.cinemaximum.com.tr/1110//Files/Teknolojiler/_MAX.jpg',
     ozellikler: ['Geniş Görüş Açısı', 'SURROUND Ses Sistemi', '145 Derece Perde']
   }
