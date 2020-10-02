@@ -1,9 +1,21 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import FilmCard from '../Card/FilmCard';
 import NewsCard from '../Card/NewsCard';
+import Spinner from './Spinner';
+import { getFilms } from '../../store/actions/film';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-function Landing({ siteTitle = 'My Movie', siteDesc = 'Sadece göründüğü gibi bir film sitesi değil...' }) {
+function Landing({
+  getFilms,
+  film: { films, loading },
+  siteTitle = 'My Movie',
+  siteDesc = 'Sadece göründüğü gibi bir film sitesi değil...'
+}) {
+  useState(() => {
+    getFilms();
+  }, []);
   return (
     <Fragment>
       <div className='landing'>
@@ -17,9 +29,15 @@ function Landing({ siteTitle = 'My Movie', siteDesc = 'Sadece göründüğü gib
       <section className='last-films'>
         <div className='container'>
           <h1 className='large section-title'>Son Eklenen Filmler</h1>
-          <FilmCard />
-          <FilmCard />
-          <FilmCard />
+          {loading ? (
+            <Spinner />
+          ) : (
+            films.slice(0, 3).map((film,i) => (
+              <Link key={i} to={`/film/${film.imdbID}`}>
+                <FilmCard {...film} />
+              </Link>
+            ))
+          )}
         </div>
       </section>
       <section className='last-news my-2'>
@@ -39,5 +57,7 @@ Landing.propTypes = {
   siteTitle: PropTypes.string,
   siteDesc: PropTypes.string
 };
-
-export default Landing;
+const mapStateToProps = state => ({
+  film: state.film
+});
+export default connect(mapStateToProps, { getFilms })(Landing);
