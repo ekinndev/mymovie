@@ -6,6 +6,7 @@ import Layout from './components/layout/Layout';
 import NotFound from './components/layout/NotFound';
 import Films from './components/layout/Film/Films';
 import Film from './components/layout/Film/Film';
+import Cinema from './components/layout/Cinema/Cinema';
 import News from './components/layout/News/News';
 import TheNews from './components/layout/News/TheNews';
 import store from './store/store';
@@ -18,6 +19,7 @@ function App() {
         <Layout>
           <Switch>
             <Route exact path='/films' component={Films} />
+            <Route exact path='/cinema' component={Cinema} />
             <Route exact path='/film/:id' component={Film} />
             <Route exact path='/news/:id' component={TheNews} />
             <Route exact path='/news' component={News} />
