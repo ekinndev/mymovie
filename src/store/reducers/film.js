@@ -14,10 +14,9 @@ export default function (state = initialState, action) {
     case GET_FILM:
       return { ...state, film: payload, loading: false };
     case LOADING_START:
-      return {};
+      return { ...state, loading: true };
     case CLEAR_FILM:
       return { ...state, film: null };
-
     default:
       return state;
   }
