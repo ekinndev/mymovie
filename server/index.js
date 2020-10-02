@@ -51,13 +51,14 @@ const haberler = [
   }
 ];
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.json(FILM_ARRAY);
 });
-app.get('/haberler', (req, res) => {
+app.get('/api/haberler', (req, res) => {
   res.json(haberler);
 });
-app.get('/haberler/:id', (req, res) => {
+app.get('/api/haberler/:id', (req, res) => {
+  // eslint-disable-next-line eqeqeq
   const haber = haberler.find(haber => haber.id == req.params.id);
   res.json(haber);
 });
