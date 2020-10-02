@@ -19,7 +19,7 @@ const TheNews = ({ getTheNews, clearNews, news: { thenew, loading } }) => {
   ) : (
     <div className='container py-3'>
       <h1 className='large my-2'>{thenew.haber_adi}</h1>
-      <span className='small'>{thenew.haber_tarih}</span>
+      <p className='small'>{thenew.haber_tarih}</p>
       <img  className="film-img p-2" src={thenew.haber_img} alt={thenew.haber_adi} />
       <p className='small yazi-icerigi p-2'>{thenew.haber_icerik}</p>
     </div>
