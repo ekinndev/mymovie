@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
+const path = require('path');
 const FILM_ARRAY = [
   'tt0299117',
   'tt0234853',
@@ -103,7 +104,12 @@ app.get('/api/haberler/:id', (req, res) => {
 app.get('/api/salonlar', (req, res) => {
   res.json(salonlar);
 });
-
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'client/build')));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
