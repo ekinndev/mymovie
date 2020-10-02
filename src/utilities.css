@@ -176,3 +176,38 @@
   word-wrap: break-word;
   padding: 0 1rem;
 }
+/*  */
+.cinema-card {
+  display: grid;
+  grid-template-areas: 'img  title title title  skill skill';
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  background-color: #f4f4f4;
+  color: #333;
+  border: 1px solid #ccc;
+}
+.cinema-img {
+  max-width: 500px;
+  max-height: 300px;
+  grid-area: img;
+}
+.cinema {
+  grid-area: title;
+}
+.cinema h1 {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.cinema-skills p {
+  font-size: 1.25rem;
+}
+.cinema span {
+  font-size: 1.5rem;
+}
+.cinema-skills {
+  grid-area: skill;
+}
