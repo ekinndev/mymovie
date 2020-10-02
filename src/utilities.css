@@ -30,9 +30,9 @@
   font-size: 10px;
   position: relative;
   text-indent: -9999em;
-  border-top: 1.1em solid rgba(215,9,9, 0.2);
-  border-right: 1.1em solid rgba(215,9,9, 0.2);
-  border-bottom: 1.1em solid rgba(215,9,9, 0.2);
+  border-top: 1.1em solid rgba(215, 9, 9, 0.2);
+  border-right: 1.1em solid rgba(215, 9, 9, 0.2);
+  border-bottom: 1.1em solid rgba(215, 9, 9, 0.2);
   border-left: 1.1em solid #d70909;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
@@ -154,7 +154,7 @@
 .card-img {
   width: 100%;
   max-height: 17rem;
-  border-radius:8px 8px 0 0;
+  border-radius: 8px 8px 0 0;
 }
 .card-info {
   display: flex;
@@ -168,11 +168,11 @@
   width: inherit;
   text-align: center;
   word-wrap: break-word;
-  padding:0 1rem;
+  padding: 0 1rem;
 }
 .card-description {
   font-size: 1.5rem;
   width: inherit;
   word-wrap: break-word;
-  padding:0 1rem;
+  padding: 0 1rem;
 }
