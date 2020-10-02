@@ -53,6 +53,34 @@ const haberler = [
       'askjasjkasjşjkaşsşjkaskjşasjkaskjşajşsjşasşjasşjjşasşjlahjlşahjashjahsjahsjlahjlashjahsajshjşlsajhashjashajhjahsal',
     haber_img: 'https://lh3.googleusercontent.com/proxy/s17dz1mmRrtV8M6oMtsINBJPdnuSjaWuPTjzqFkk1-2B34vCY4Xlejicjwqr5AcRlnw5oVj7PH1F8qgpMDgniWJwOOLN-kxDhPY7mJjamowtanI',
     haber_tarih:'22/10/2080'
+const salonlar = [
+  {
+    id: 1,
+    salon_adi: 'GOLD CLASS',
+    salon_aciklama: 'Ev rahatlığında sinema keyfi!',
+    salon_img: 'https://media.cinemaximum.com.tr/1110//Files/goldclass/1920x420px_goldclass_new.jpg',
+    ozellikler: ['Geniş Koltuk', 'Yatabilen koltuk', 'Fuaye alanı', 'Telefon Şarj Ünitesi', 'Üst Düzey Konfor']
+  },
+  {
+    id: 2,
+    salon_adi: 'Skybox',
+    salon_aciklama: 'Ev rahatlığında sinema keyfi!',
+    salon_img: 'https://media.cinemaximum.com.tr/1110//Files/Teknolojiler/1920x420px_skybox.jpg',
+    ozellikler: ['Geniş Koltuk', 'Yatabilen koltuk', 'Deri Koltuk', 'Loca']
+  },
+  {
+    id: 3,
+    salon_adi: '4DX',
+    salon_aciklama: '4DX ile Filmi Yaşamaya Hazır Mısın?',
+    salon_img: 'https://media.cinemaximum.com.tr/1110//Files/Teknolojiler/4DX.jpg',
+    ozellikler: ['4D', 'SU Efekti', 'Işık Efekti', 'Titreşim', 'Koku']
+  },
+  {
+    id: 4,
+    salon_adi: 'IMAX',
+    salon_aciklama: 'IMAX Sinema Sistemi',
+    salon_img: 'https://media.cinemaximum.com.tr/1110//Files/Teknolojiler/_MAX.jpg',
+    ozellikler: ['Geniş Görüş Açısı', 'SURROUND Ses Sistemi', '145 Derece Perde']
   }
 ];
 
@@ -66,6 +94,9 @@ app.get('/api/haberler/:id', (req, res) => {
   // eslint-disable-next-line eqeqeq
   const haber = haberler.find(haber => haber.id == req.params.id);
   res.json(haber);
+});
+app.get('/api/salonlar', (req, res) => {
+  res.json(salonlar);
 });
 
 app.listen(port, () => {
