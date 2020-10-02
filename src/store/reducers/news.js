@@ -10,13 +10,13 @@ export default function (state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
     case GET_NEWS:
-      return {};
+      return { ...state, loading: false, news: payload };
     case GET_THE_NEWS:
-      return {};
+      return { ...state, loading: false, thenew: payload };
     case LOADING_START:
-      return {};
+      return { ...state, loading: true };
     case CLEAR_THE_NEWS:
-      return {};
+      return { ...state, loading: true, thenew: null };
 
     default:
       return state;

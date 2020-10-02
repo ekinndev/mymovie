@@ -10,13 +10,13 @@ export default function (state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
     case GET_FILMS:
-      return {};
+      return { ...state, films: payload, loading: false };
     case GET_FILM:
-      return {};
+      return { ...state, film: payload, loading: false };
     case LOADING_START:
       return {};
     case CLEAR_FILM:
-      return {};
+      return { ...state, film: null };
 
     default:
       return state;
