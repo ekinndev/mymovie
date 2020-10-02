@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FilmCard = ({ title="Deneme", shortDesc="asjnaskşaksjakşsjakşsjasjnaskşaksjakşsjakşsjakşsjşaksjaasjnaskşaksjakşsjakşsjakşsjşaksjaasjnaskşaksjakşsjakşsjakşsjşaksjaasjnaskşaksjakşsjakşsjakşsjşaksjaasjnaskşaksjakşsjakşsjakşsjşaksjaasjnaskşaksjakşsjakşsjakşsjşaksjaasjnaskşaksjakşsjakşsjakşsjşaksjaakşsjşaksja", imageUrl="https://m.media-amazon.com/images/M/MV5BMjcwYjEwYTMtNTE0Ni00YjQ5LTk5ZjUtOTc2NDQ2OTNlNDFiXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SY230_SX307_AL_.jpg", genre="Komedi", rating="3" }) => {
+const FilmCard = ({Title,Year,imdbRating,Plot ,Genre,Poster}) => {
   return (
     <div className='card'>
-      <img className='card-img' src={imageUrl} alt={title} />
+      <img className='card-img' src={Poster} alt={Title} />
       <div className='card-info'>
-        <h2 className='card-title'>{title}</h2>
+        <h2 className='card-title'>{Title} - {Year}</h2>
         <p className="py-1">
-          {genre} - {rating}
+          {Genre} - Imdb:{imdbRating}
         </p>
-        <div className='card-description'>{shortDesc}</div>
+        <div className='card-description'>{Plot.substring(0,200)}...</div>
       </div>
     </div>
   );
