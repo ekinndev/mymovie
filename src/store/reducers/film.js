@@ -1,9 +1,10 @@
-import { GET_FILM, GET_FILMS, LOADING_START, CLEAR_FILM } from '../actions/types';
+import { GET_FILM, GET_FILMS, LOADING_START, CLEAR_FILM,GET_CINEMA } from '../actions/types';
 
 const initialState = {
   films: [],
   film: null,
-  loading: true
+  loading: true,
+  cinema: []
 };
 
 export default function (state = initialState, action) {
@@ -17,6 +18,8 @@ export default function (state = initialState, action) {
       return { ...state, loading: true };
     case CLEAR_FILM:
       return { ...state, film: null };
+    case GET_CINEMA:
+      return { ...state, cinema: payload, loading: false };
     default:
       return state;
   }

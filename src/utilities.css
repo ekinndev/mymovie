@@ -163,23 +163,27 @@
   width: 100%;
 }
 .card-title {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-height: 2em;
   font-size: 3rem;
   font-weight: bold;
-  width: inherit;
+  width: 100%;
   text-align: center;
-  word-wrap: break-word;
   padding: 0 1rem;
 }
 .card-description {
   font-size: 1.5rem;
   width: inherit;
   word-wrap: break-word;
+  overflow: hidden;
   padding: 0 1rem;
 }
 /*  */
 .cinema-card {
   display: grid;
-  grid-template-areas: 'img  title title title  skill skill';
+  grid-template-columns: 1fr 1fr 150px;
   gap: 1rem;
   align-items: center;
   padding: 1rem;
@@ -189,13 +193,6 @@
   color: #333;
   border: 1px solid #ccc;
 }
-.cinema-img {
-  max-width: 500px;
-  max-height: 300px;
-  grid-area: img;
-}
-.cinema {
-  grid-area: title;
 }
 .cinema h1 {
   display: block;
@@ -203,11 +200,10 @@
   font-weight: bold;
 }
 .cinema-skills p {
+  display: flex;
+  align-items: center;
   font-size: 1.25rem;
 }
 .cinema span {
   font-size: 1.5rem;
-}
-.cinema-skills {
-  grid-area: skill;
 }

@@ -6,3 +6,4 @@ export const CLEAR_FILM = 'CLEAR_FILM';
 export const CLEAR_NEWS = 'CLEAR_NEWS';
 export const CLEAR_THE_NEWS = 'CLEAR_THE_NEWS';
 export const LOADING_START = 'LOADING_START';
+export const GET_CINEMA = 'GET_CINEMA';

@@ -1,4 +1,4 @@
-import { GET_FILM, GET_FILMS, LOADING_START, CLEAR_FILM } from './types';
+import { GET_FILM, GET_FILMS, LOADING_START, CLEAR_FILM, GET_CINEMA } from './types';
 import axios from 'axios';
 
 export const getFilms = () => async dispatch => {
@@ -32,6 +32,15 @@ export const getFilm = id => async dispatch => {
 export const clearFilm = () => async dispatch => {
   try {
     dispatch({ type: CLEAR_FILM });
+  } catch (e) {
+    console.log(e);
+  }
+};
+export const getCinema = () => async dispatch => {
+  try {
+    dispatch({ type: LOADING_START });
+    const { data } = await axios.get(`/api/salonlar/`);
+    dispatch({ type: GET_CINEMA, payload: data });
   } catch (e) {
     console.log(e);
   }

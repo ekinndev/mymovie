@@ -1,19 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import CinemaCard from '../../Card/CinemaCard';
+import Spinner from '../Spinner';
+import { getCinema } from '../../../store/actions/film';
+import { connect } from 'react-redux';
 
-function Cinema(props) {
+function Cinema({ film: { cinema, loading }, getCinema }) {
+  useEffect(() => {
+    getCinema();
+  }, [getCinema]);
+
   return (
     <div className='container'>
       <h1 className='large m-1'>Sinema Salonları</h1>
-      <CinemaCard />
-      <CinemaCard />
-      <CinemaCard />
-      <CinemaCard />
+      {loading || !cinema.length > 0 ? <Spinner /> : cinema.map(c => <CinemaCard key={c.id} {...c} />)}
     </div>
   );
 }
 
-Cinema.propTypes = {};
+Cinema.propTypes = {
+  getCinema: PropTypes.func.isRequired
+};
 
-export default Cinema;
+const mapStateToProps = state => ({
+  film: state.film
+});
+
+export default connect(mapStateToProps, { getCinema })(Cinema);
