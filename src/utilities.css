@@ -16,6 +16,8 @@
   margin: auto;
   padding: 0 2rem;
   overflow: hidden;
+  text-align: center;
+}
 /* Spinner */
 .loader,
 .loader:after {
