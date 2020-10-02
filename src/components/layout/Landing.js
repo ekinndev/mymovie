@@ -1,21 +1,25 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import FilmCard from '../Card/FilmCard';
 import NewsCard from '../Card/NewsCard';
 import Spinner from './Spinner';
 import { getFilms } from '../../store/actions/film';
+import { getNews } from '../../store/actions/news';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 function Landing({
   getFilms,
-  film: { films, loading },
+  getNews,
+  film: { films, filmloading },
+  news: { news, newsLoading },
   siteTitle = 'My Movie',
   siteDesc = 'Sadece göründüğü gibi bir film sitesi değil...'
 }) {
-  useState(() => {
+  useEffect(() => {
     getFilms();
-  }, []);
+    getNews();
+  }, [getFilms, getNews]);
   return (
     <Fragment>
       <div className='landing'>
@@ -29,10 +33,10 @@ function Landing({
       <section className='last-films'>
         <div className='container'>
           <h1 className='large section-title'>Son Eklenen Filmler</h1>
-          {loading ? (
+          {filmloading ? (
             <Spinner />
           ) : (
-            films.slice(0, 3).map((film,i) => (
+            films.slice(0, 3).map((film, i) => (
               <Link key={i} to={`/film/${film.imdbID}`}>
                 <FilmCard {...film} />
               </Link>
@@ -43,10 +47,15 @@ function Landing({
       <section className='last-news my-2'>
         <div className='container'>
           <h1 className='large section-title'>Son Eklenen Haberler</h1>
-
-          <NewsCard />
-          <NewsCard />
-          <NewsCard />
+          {newsLoading ? (
+            <Spinner />
+          ) : (
+            news.slice(0, 3).map((thenews, i) => (
+              <Link key={thenews.id} to={`/news/${thenews.id}`}>
+                <NewsCard {...thenews} />
+              </Link>
+            ))
+          )}
         </div>
       </section>
     </Fragment>
@@ -58,6 +67,7 @@ Landing.propTypes = {
   siteDesc: PropTypes.string
 };
 const mapStateToProps = state => ({
-  film: state.film
+  film: state.film,
+  news: state.news
 });
-export default connect(mapStateToProps, { getFilms })(Landing);
+export default connect(mapStateToProps, { getFilms, getNews })(Landing);
