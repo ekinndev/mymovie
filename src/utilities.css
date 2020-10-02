@@ -153,6 +153,7 @@
 }
 .card-img {
   width: 100%;
+  max-height: 17rem;
   border-radius:8px 8px 0 0;
 }
 .card-info {
