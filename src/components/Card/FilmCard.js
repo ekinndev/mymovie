@@ -8,7 +8,7 @@ const FilmCard = ({Title,Year,imdbRating,Plot ,Genre,Poster}) => {
       <div className='card-info'>
         <h2 className='card-title'>{Title} - {Year}</h2>
         <p className="py-1">
-          {Genre} - Imdb:{imdbRating}
+          {Genre} - <span className="imdb">Imdb:{imdbRating}</span>
         </p>
         <div className='card-description'>{Plot.substring(0,200)}...</div>
       </div>

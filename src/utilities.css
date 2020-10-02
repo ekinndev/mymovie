@@ -193,7 +193,12 @@
   color: #333;
   border: 1px solid #ccc;
 }
+.imdb {
+  font-weight: bold;
+  background-color: #F3CE13;
+  padding:0 0.5rem;
 }
+
 .cinema h1 {
   display: block;
   font-size: 2rem;
