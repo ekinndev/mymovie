@@ -9,13 +9,13 @@ const Navbar = props => {
           <Link to='/'>Ana Sayfa</Link>
         </li>
         <li className='nav-item'>
-          <Link to='filmler'>Filmler</Link>
+          <Link to='/films'>Filmler</Link>
         </li>
         <li className='nav-item'>
-          <Link to='haberler'>Haberler</Link>
+          <Link to='/news'>Haberler</Link>
         </li>
         <li className='nav-item'>
-          <Link to='salonlar'>Salonlar</Link>
+          <Link to='/theathers'>Salonlar</Link>
         </li>
       </ul>
     </nav>
