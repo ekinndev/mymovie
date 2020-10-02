@@ -11,8 +11,8 @@ function CinemaCard({ salon_adi, salon_aciklama, salon_img, ozellikler, id }) {
         <span>{salon_aciklama}</span>
       </div>
       <div className='cinema-skills'>
-        {ozellikler.map(oz => (
-          <CinemaSkill key={id}>{oz}</CinemaSkill>
+        {ozellikler.map((oz,i) => (
+          <CinemaSkill key={i}>{oz}</CinemaSkill>
         ))}
       </div>
     </div>
