@@ -25,7 +25,7 @@ const Film = ({ getFilm, clearFilm, film: { film, loading } }) => {
       </span>
       <img className='film-img' src={film.Poster} alt={film.Title} />
       <h2 className='large my-3'>Film İçeriği - Plot</h2>
-      <p className='small'>{film.Plot}</p>
+      <p className='small yazi-icerigi p-2'>{film.Plot}</p>
     </div>
   );
 };

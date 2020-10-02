@@ -15,17 +15,19 @@ function News({ getNews, news: { news, loading } }) {
     <Fragment>
       <div className='container'>
         <h1 className='large'>Haberler</h1>
-        {loading ? (
-          <Spinner />
-        ) : (
-          news.map(thenews => {
-            return (
-              <Link key={thenews.id} to={`/news/${thenews.id}`}>
-                <NewsCard {...thenews} />
-              </Link>
-            );
-          })
-        )}
+        <div className='kartlar'>
+          {loading ? (
+            <Spinner />
+          ) : (
+            news.map(thenews => {
+              return (
+                <Link key={thenews.id} to={`/news/${thenews.id}`}>
+                  <NewsCard {...thenews} />
+                </Link>
+              );
+            })
+          )}
+        </div>
       </div>
     </Fragment>
   );

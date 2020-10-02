@@ -19,7 +19,7 @@ const haberler = [
     id: 1,
     haber_adi: "React'in Filmi Çekiliyor",
     haber_icerik:
-      'askjasjkasjşjkaşsşjkaskjşasjkaskjşajşsjşasşjasşjjşasşjlahjlşahjashjahsjahsjlahjlashjahsajshjşlsajhashjashajhjahsal',
+      'React, interaktif kullanıcı arayüzü geliştirmeyi zahmetsiz hale getirir. Siz uygulamanızdaki her durum için basit sayfalar tasarlayın. React, veriniz değiştiğinde sadece doğru bileşenleri verimli bir şekilde güncellesin ve oluştursun.Bildirimsel sayfalar, kodunuzu daha öngörülebilir ve hata ayıklaması daha kolay hale getirir.',
     haber_img: 'https://miro.medium.com/max/700/0*Wf5PCtkJpTL9nJwS.png',
     haber_tarih: '22/10/2025'
   },
@@ -27,7 +27,7 @@ const haberler = [
     id: 2,
     haber_adi: "Svelte'in Filmi Çekiliyor",
     haber_icerik:
-      'askjasjkasjşjkaşsşjkaskjşasjkaskjşajşsjşasşjasşjjşasşjlahjlşahjashjahsjahsjlahjlashjahsajshjşlsajhashjashajhjahsal',
+      'Svelte is a radical new approach to building user interfaces. Whereas traditional frameworks like React and Vue do the bulk of their work in the browser, Svelte shifts that work into a compile step that happens when you build your app.Instead of using techniques like virtual DOM diffing, Svelte writes code that surgically updates the DOM when the state of your app changes.',
     haber_img:
       'https://res.cloudinary.com/practicaldev/image/fetch/s--be3eR7Dm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://nunomalex.me/svelte-logo.png',
     haber_tarih: '22/10/2030'
@@ -36,7 +36,7 @@ const haberler = [
     id: 3,
     haber_adi: "Vue'nün Filmi Çekiliyor",
     haber_icerik:
-      'askjasjkasjşjkaşsşjkaskjşasjkaskjşajşsjşasşjasşjjşasşjlahjlşahjashjahsjahsjlahjlashjahsajshjşlsajhashjashajhjahsal',
+      'Vue (pronounced /vjuː/, like view) is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries.',
     haber_img: 'https://images.dnomia.com/ceaksan/vue-js.jpeg',
     haber_tarih: '22/10/2024'
   },
@@ -44,7 +44,7 @@ const haberler = [
     id: 4,
     haber_adi: "Express'in Filmi Çekiliyor",
     haber_icerik:
-      'askjasjkasjşjkaşsşjkaskjşasjkaskjşajşsjşasşjasşjjşasşjlahjlşahjashjahsjahsjlahjlashjahsajshjşlsajhashjashajhjahsal',
+      'This is a built-in middleware function in Express. It parses incoming requests with JSON payloads and is based on body-parser.Returns middleware that only parses JSON and only looks at requests where the Content-Type header matches the type option. This parser accepts any Unicode encoding of the body and supports automatic inflation of gzip and deflate encodings.A new body object containing the parsed data is populated on the request object after the middleware (i.e. req.body), or an empty object ({}) if there was no body to parse, the Content-Type was not matched, or an error occurred.',
     haber_img: 'https://expressjs.com/images/express-facebook-share.png',
     haber_tarih: '22/10/2040'
   },
@@ -52,7 +52,7 @@ const haberler = [
     id: 5,
     haber_adi: "JavaScript'in Fişi Çekiliyor",
     haber_icerik:
-      'askjasjkasjşjkaşsşjkaskjşasjkaskjşajşsjşasşjasşjjşasşjlahjlşahjashjahsjahsjlahjlashjahsajshjşlsajhashjashajhjahsal',
+      'JavaScript® (genellikle js olarak kısaltılır) basit şekilde yorumlanmış ve birinci sınıf fonksiyonlar ile harmanlanmış nesne tabanlı bir programlama dilidir. Daha çok web sayfaları için kullanılan bir betik dili olarak bilinir, ancak node.js veya Apache CouchDB gibi tarayıcı olmayan ortamlarda da sıkça kullanılır. Prototip tabanlı olması ve çoklu paradigma içeren bir dil olması dinamik ve fonksiyonel bir yapı sağlar. JavaScript hakkında detaylı bilgi edinin.',
     haber_img:
       'https://lh3.googleusercontent.com/proxy/s17dz1mmRrtV8M6oMtsINBJPdnuSjaWuPTjzqFkk1-2B34vCY4Xlejicjwqr5AcRlnw5oVj7PH1F8qgpMDgniWJwOOLN-kxDhPY7mJjamowtanI',
     haber_tarih: '22/10/2080'

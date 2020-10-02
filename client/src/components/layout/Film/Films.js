@@ -74,19 +74,21 @@ function Films({ getFilms, film: { films, loading } }) {
           </label>
         </div>
         <h1 className='large'>Filmler</h1>
-        {films
-          .filter(film => {
-            let isFilter = true;
-            filter.forEach(filt => {
-              isFilter = isFilter && film.Genre.includes(filt);
-            });
-            return isFilter;
-          })
-          .map((film, i) => (
-            <Link key={i} to={`/film/${film.imdbID}`}>
-              <FilmCard {...film} />
-            </Link>
-          ))}
+        <div className='kartlar'>
+          {films
+            .filter(film => {
+              let isFilter = true;
+              filter.forEach(filt => {
+                isFilter = isFilter && film.Genre.includes(filt);
+              });
+              return isFilter;
+            })
+            .map((film, i) => (
+              <Link key={i} to={`/film/${film.imdbID}`}>
+                <FilmCard {...film} />
+              </Link>
+            ))}
+        </div>
       </div>
     </Fragment>
   );
