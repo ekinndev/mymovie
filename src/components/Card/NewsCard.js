@@ -1,17 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const NewsCard = ({
-  title = 'Deneme',
-  shortDesc = 'asjnaskşaksjakşsjakşsjasjnaskşaksjakşsjakşsjakşsjşaksjaasjnaskşaksjakşsjakşsjakşsjşaksjaasjnaskşaksjakşsjakşsjakşsjşaksjaasjnaskşaksjakşsjakşsjakşsjşaksjaasjnaskşaksjakşsjakşsjakşsjşaksjaasjnaskşaksjakşsjakşsjakşsjşaksjaasjnaskşaksjakşsjakşsjakşsjşaksjaakşsjşaksja',
-  imageUrl = 'https://m.media-amazon.com/images/M/MV5BMjcwYjEwYTMtNTE0Ni00YjQ5LTk5ZjUtOTc2NDQ2OTNlNDFiXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SY230_SX307_AL_.jpg'
-}) => {
+const NewsCard = ({ haber_adi, haber_icerik, haber_img }) => {
   return (
     <div className='card'>
-      <img className='card-img' src={imageUrl} alt={title} />
+      <img className='card-img' src={haber_img} alt={haber_adi} />
       <div className='card-info'>
-        <h2 className='card-title'>{title}</h2>
-        <div className='card-description'>{shortDesc}</div>
+        <h2 className='card-title'>{haber_adi}</h2>
+        <div className='card-description'>{haber_icerik}</div>
       </div>
     </div>
   );

@@ -1,27 +1,39 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useParams } from 'react-router-dom';
+import { getTheNews, clearNews } from '../../../store/actions/news';
+import Spinner from '../Spinner';
+import { connect } from 'react-redux';
 
-const TheNews = ({ news }) => {
-  return (
+const TheNews = ({ getTheNews, clearNews, news: { thenew, loading } }) => {
+  const { id } = useParams();
+
+  useEffect(() => {
+    getTheNews(id);
+    return () => {
+      clearNews();
+    };
+  }, [id, getTheNews, clearNews]);
+  return loading || !thenew ? (
+    <Spinner />
+  ) : (
     <div className='container py-3'>
-      <h1 className='large my-2'>Ekin Abalıoğlu Hangi Filmde Oynayacak?</h1>
-      <span className='small'>2010 - IMDB:5 - Aksiyon</span>
-      <img
-        src='https://www.log.com.tr/wp-content/uploads/2019/07/spider-man-far-from-home-sonrasi-tom-holland-ve-marvel-anlasmasi.jpg'
-        alt='Örümcek Adam'
-      />
-      <p className='small'>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero cumque tenetur nostrum quo officiis voluptatum,
-        itaque quas possimus, nemo libero unde. Earum totam cupiditate asperiores, officiis nam quo ipsa illum! Lorem
-        ipsum dolor sit, amet consectetur adipisicing elit. Vero cumque tenetur nostrum quo officiis voluptatum, itaque
-        quas possimus, nemo libero unde. Earum totam cupiditate asperiores, officiis nam quo ipsa illum! Lorem ipsum
-        dolor sit, amet consectetur adipisicing elit. Vero cumque tenetur nostrum quo officiis voluptatum, itaque quas
-        possimus, nemo libero unde. Earum totam cupiditate asperiores, officiis nam quo ipsa illum!
-      </p>
+      <h1 className='large my-2'>{thenew.haber_adi}</h1>
+      <span className='small'>{thenew.haber_tarih}</span>
+      <img src={thenew.haber_img} alt={thenew.haber_adi} />
+      <p className='small'>{thenew.haber_icerik}</p>
     </div>
   );
 };
 
-TheNews.propTypes = {};
+TheNews.propTypes = {
+  getTheNews: PropTypes.func.isRequired,
+  clearNews: PropTypes.func.isRequired,
+  news: PropTypes.object.isRequired
+};
 
-export default TheNews;
+const mapStateToProps = state => ({
+  news: state.news
+});
+
+export default connect(mapStateToProps, { getTheNews, clearNews })(TheNews);
