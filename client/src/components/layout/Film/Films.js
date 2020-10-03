@@ -6,12 +6,13 @@ import { connect } from 'react-redux';
 import FilmCard from '../../Card/FilmCard';
 import { Link } from 'react-router-dom';
 
-function Films({ getFilms, film: { films, loading } }) {
+function Films({ getFilms, film: { films, loading, favs } }) {
   useEffect(() => {
     getFilms();
   }, [getFilms]);
 
   const [filter, setFilter] = useState([]);
+  const [showFav, setShowFav] = useState(false);
 
   const addFilters = e => {
     const value = e.target.value;
@@ -25,6 +26,10 @@ function Films({ getFilms, film: { films, loading } }) {
         return [...newArr];
       }
     });
+  };
+
+  const toggleFav = () => {
+    setShowFav(prevState => !prevState);
   };
   return loading ? (
     <Spinner />
@@ -72,12 +77,19 @@ function Films({ getFilms, film: { films, loading } }) {
             />
             Gerilim
           </label>
+          <label htmlFor='filter4'>
+            <input type='checkbox' name='fav' value='fav' checked={showFav} onChange={toggleFav} />
+            Favoriler
+          </label>
         </div>
         <h1 className='large'>Filmler</h1>
         <div className='kartlar'>
           {films
             .filter(film => {
               let isFilter = true;
+              if (showFav) {
+                isFilter = isFilter && !(favs.indexOf(film.imdbID) < 0);
+              }
               filter.forEach(filt => {
                 isFilter = isFilter && film.Genre.includes(filt);
               });

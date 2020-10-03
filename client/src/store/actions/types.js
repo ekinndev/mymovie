@@ -7,3 +7,5 @@ export const CLEAR_NEWS = 'CLEAR_NEWS';
 export const CLEAR_THE_NEWS = 'CLEAR_THE_NEWS';
 export const LOADING_START = 'LOADING_START';
 export const GET_CINEMA = 'GET_CINEMA';
+export const ADD_FAV = 'ADD_FAV';
+export const REMOVE_FAV = 'REMOVE_FAV';

@@ -1,4 +1,4 @@
-import { GET_FILM, GET_FILMS, LOADING_START, CLEAR_FILM, GET_CINEMA } from './types';
+import { GET_FILM, GET_FILMS, LOADING_START, CLEAR_FILM, GET_CINEMA, ADD_FAV, REMOVE_FAV } from './types';
 import axios from 'axios';
 
 export const getFilms = () => async dispatch => {
@@ -44,4 +44,10 @@ export const getCinema = () => async dispatch => {
   } catch (e) {
     console.log(e);
   }
+};
+export const addFav = id => async dispatch => {
+  dispatch({ type: ADD_FAV, payload: id });
+};
+export const removeFav = id => async dispatch => {
+  dispatch({ type: REMOVE_FAV, payload: id });
 };

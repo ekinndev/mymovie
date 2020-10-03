@@ -1,10 +1,11 @@
-import { GET_FILM, GET_FILMS, LOADING_START, CLEAR_FILM,GET_CINEMA } from '../actions/types';
+import { GET_FILM, GET_FILMS, LOADING_START, CLEAR_FILM, GET_CINEMA, ADD_FAV, REMOVE_FAV } from '../actions/types';
 
 const initialState = {
   films: [],
   film: null,
   loading: true,
-  cinema: []
+  cinema: [],
+  favs: localStorage.getItem('favs') ? JSON.parse(localStorage.getItem('favs')) : []
 };
 
 export default function (state = initialState, action) {
@@ -20,6 +21,14 @@ export default function (state = initialState, action) {
       return { ...state, film: null };
     case GET_CINEMA:
       return { ...state, cinema: payload, loading: false };
+    case ADD_FAV:
+      const newState = { ...state, favs: [...state.favs, payload] };
+      localStorage.setItem('favs', JSON.stringify(newState.favs));
+      return { ...newState };
+    case REMOVE_FAV:
+      const newRemoveState = { ...state, favs: [...state.favs.filter(id => id !== payload)] };
+      localStorage.setItem('favs', JSON.stringify(newRemoveState.favs));
+      return { ...newRemoveState };
     default:
       return state;
   }
