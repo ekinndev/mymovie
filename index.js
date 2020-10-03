@@ -54,7 +54,7 @@ const haberler = [
     haber_icerik:
       'JavaScript® (genellikle js olarak kısaltılır) basit şekilde yorumlanmış ve birinci sınıf fonksiyonlar ile harmanlanmış nesne tabanlı bir programlama dilidir. Daha çok web sayfaları için kullanılan bir betik dili olarak bilinir, ancak node.js veya Apache CouchDB gibi tarayıcı olmayan ortamlarda da sıkça kullanılır. Prototip tabanlı olması ve çoklu paradigma içeren bir dil olması dinamik ve fonksiyonel bir yapı sağlar. JavaScript hakkında detaylı bilgi edinin.',
     haber_img:
-      'https://lh3.googleusercontent.com/proxy/s17dz1mmRrtV8M6oMtsINBJPdnuSjaWuPTjzqFkk1-2B34vCY4Xlejicjwqr5AcRlnw5oVj7PH1F8qgpMDgniWJwOOLN-kxDhPY7mJjamowtanI',
+      'https://miro.medium.com/max/900/1*O8VS6yXEVDYnbb4bOVKs8A.jpeg',
     haber_tarih: '22/10/2080'
   }
 ];
