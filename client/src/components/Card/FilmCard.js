@@ -6,9 +6,32 @@ import HearthFill from '../Icon/HearthFill';
 import { addFav, removeFav } from '../../store/actions/film';
 import { connect } from 'react-redux';
 
-const FilmCard = ({ addFav, removeFav, favs, Title, Year, imdbRating, Plot, Genre, Poster, imdbID }) => {
+const FilmCard = ({
+  addFav,
+  removeFav,
+  favs,
+  Title,
+  Type,
+  Year,
+  imdbRating,
+  Plot,
+  Genre,
+  Poster,
+  imdbID,
+  type = 'normal'
+}) => {
   const isFav = !(favs.indexOf(imdbID) < 0);
-  return (
+  return type !== 'normal' ? (
+    <div className='card'>
+      <img className='card-img' src={Poster} alt={Title} />
+      <div className='card-info'>
+        <h2 className='card-title my-1'>
+          {Title} - {Year}
+        </h2>
+        <div className='card-description'> {Type.toUpperCase()}</div>
+      </div>
+    </div>
+  ) : (
     <div className='card'>
       <IconButton
         icon={isFav ? <HearthFill /> : <Hearth />}
@@ -23,7 +46,7 @@ const FilmCard = ({ addFav, removeFav, favs, Title, Year, imdbRating, Plot, Genr
       />
       <img className='card-img' src={Poster} alt={Title} />
       <div className='card-info'>
-        <h2 className='card-title'>
+        <h2 className='card-title my-1'>
           {Title} - {Year}
         </h2>
         <p className='py-1'>

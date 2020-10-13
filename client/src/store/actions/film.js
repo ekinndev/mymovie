@@ -1,4 +1,14 @@
-import { GET_FILM, GET_FILMS, LOADING_START, CLEAR_FILM, GET_CINEMA, ADD_FAV, REMOVE_FAV } from './types';
+import {
+  GET_FILM,
+  GET_FILMS,
+  LOADING_START,
+  CLEAR_FILM,
+  GET_CINEMA,
+  ADD_FAV,
+  REMOVE_FAV,
+  SEARCH_FILM,
+  SEARCH_START
+} from './types';
 import axios from 'axios';
 
 export const getFilms = () => async dispatch => {
@@ -29,6 +39,7 @@ export const getFilm = id => async dispatch => {
     console.log(e);
   }
 };
+
 export const clearFilm = () => async dispatch => {
   try {
     dispatch({ type: CLEAR_FILM });
@@ -36,6 +47,7 @@ export const clearFilm = () => async dispatch => {
     console.log(e);
   }
 };
+
 export const getCinema = () => async dispatch => {
   try {
     dispatch({ type: LOADING_START });
@@ -45,9 +57,26 @@ export const getCinema = () => async dispatch => {
     console.log(e);
   }
 };
+
 export const addFav = id => async dispatch => {
   dispatch({ type: ADD_FAV, payload: id });
 };
 export const removeFav = id => async dispatch => {
   dispatch({ type: REMOVE_FAV, payload: id });
+};
+
+export const searchFilm = (name, type, year) => async dispatch => {
+  try {
+    dispatch({ type: SEARCH_START });
+    const API_URL = `${process.env.REACT_APP_MOVIE_API}?apikey=${process.env.REACT_APP_KEY}`;
+    const queryUrl = `${API_URL}&s=${name}&type=${type}&y=${year}`;
+    const film = await axios.get(queryUrl);
+    if (film.data['Response'] === 'True') {
+      dispatch({ type: SEARCH_FILM, payload: film.data['Search'] });
+    } else {
+      dispatch({ type: SEARCH_FILM, payload: null });
+    }
+  } catch (e) {
+    console.log(e);
+  }
 };

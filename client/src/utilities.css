@@ -66,10 +66,12 @@
 /* Başlık ve Yazı Stilleri */
 .large {
   font-size: 5.5rem;
+  font-weight: bold;
 }
 
 .medium {
   font-size: 3.5rem;
+  font-weight: bold;
 }
 .yazi-icerigi {
   word-wrap: break-word;
@@ -192,7 +194,7 @@
   text-overflow: ellipsis;
   overflow: hidden;
   max-height: 2em;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
   width: 100%;
   text-align: center;

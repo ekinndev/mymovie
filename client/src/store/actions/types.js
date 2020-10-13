@@ -9,3 +9,5 @@ export const LOADING_START = 'LOADING_START';
 export const GET_CINEMA = 'GET_CINEMA';
 export const ADD_FAV = 'ADD_FAV';
 export const REMOVE_FAV = 'REMOVE_FAV';
+export const SEARCH_FILM = 'SEARCH_FILM';
+export const SEARCH_START = 'SEARCH_START';
