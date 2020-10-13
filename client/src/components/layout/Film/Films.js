@@ -82,7 +82,7 @@ function Films({ getFilms, film: { films, loading, favs } }) {
             Favoriler
           </label>
         </div>
-        <h1 className='large'>Filmler</h1>
+        <h1 className='medium my-2'>Filmler</h1>
         <div className='kartlar'>
           {films
             .filter(film => {

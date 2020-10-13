@@ -12,7 +12,7 @@ function Cinema({ film: { cinema, loading }, getCinema }) {
 
   return (
     <div className='container'>
-      <h1 className='large m-1'>Sinema Salonları</h1>
+      <h1 className='medium my-2'>Sinema Salonları</h1>
       {loading || !cinema.length > 0 ? <Spinner /> : cinema.map(c => <CinemaCard key={c.id} {...c} />)}
     </div>
   );

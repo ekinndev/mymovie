@@ -18,14 +18,14 @@ const Film = ({ getFilm, clearFilm, film: { film, loading } }) => {
   return loading || !film ? (
     <Spinner />
   ) : (
-    <div className='container py-3'>
-      <h1 className='large my-2'>{film.Title}</h1>
-      <span className='small'>
+    <div className='container'>
+      <h1 className='medium my-2'>{film.Title}</h1>
+      <span className='small my-2' style={{display: 'inline-block'}}>
         {film.Released} - IMDB:{film.imdbRating} - {film.Genre} - {film.Rated} - {film.Runtime}
       </span>
       <img className='film-img' src={film.Poster} alt={film.Title} />
-      <h2 className='large my-3'>Film İçeriği - Plot</h2>
-      <p className='small yazi-icerigi p-2'>{film.Plot}</p>
+      <h2 className='medium my-2'>Film İçeriği - Plot</h2>
+      <p className='small yazi-icerigi my-2'>{film.Plot}</p>
     </div>
   );
 };

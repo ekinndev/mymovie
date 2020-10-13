@@ -17,11 +17,11 @@ const TheNews = ({ getTheNews, clearNews, news: { thenew, loading } }) => {
   return loading || !thenew ? (
     <Spinner />
   ) : (
-    <div className='container py-3'>
-      <h1 className='large my-2'>{thenew.haber_adi}</h1>
+    <div className='container'>
+      <h1 className='medium my-2'>{thenew.haber_adi}</h1>
       <p className='small'>{thenew.haber_tarih}</p>
-      <img  className="film-img p-2" src={thenew.haber_img} alt={thenew.haber_adi} />
-      <p className='small yazi-icerigi p-2'>{thenew.haber_icerik}</p>
+      <img  className="film-img my-2" src={thenew.haber_img} alt={thenew.haber_adi} />
+      <p className='small yazi-icerigi my-2'>{thenew.haber_icerik}</p>
     </div>
   );
 };

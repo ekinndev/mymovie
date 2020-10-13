@@ -16,7 +16,7 @@ function News({ getNews, news: { news, loading } }) {
   ) : (
     <Fragment>
       <div className='container'>
-        <h1 className='large'>Haberler</h1>
+        <h1 className='medium my-2'>Haberler</h1>
         <div className='kartlar'>
           {news.map(thenews => {
             return (
