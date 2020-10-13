@@ -11,8 +11,8 @@ import { Link } from 'react-router-dom';
 function Landing({
   getFilms,
   getNews,
-  film: { films, filmloading },
-  news: { news, newsLoading },
+  film ,
+  news,
   siteTitle = 'My Movie',
   siteDesc = 'Sadece göründüğü gibi bir film sitesi değil...'
 }) {
@@ -32,11 +32,11 @@ function Landing({
       </div>
       <section className='last-films'>
         <div className='container'>
-          <h1 className='large section-title'>Son Eklenen Filmler</h1>
-          {filmloading ? (
+          <h1 className='medium section-title my-2'>Son Eklenen Filmler</h1>
+          {film.loading ? (
             <Spinner />
           ) : (
-            films.slice(0, 3).map((film, i) => (
+            film.films.slice(0, 3).map((film, i) => (
               <Link key={i} to={`/film/${film.imdbID}`}>
                 <FilmCard {...film} />
               </Link>
@@ -46,11 +46,11 @@ function Landing({
       </section>
       <section className='last-news my-2'>
         <div className='container'>
-          <h1 className='large section-title'>Son Eklenen Haberler</h1>
-          {newsLoading ? (
+          <h1 className='medium section-title'>Son Eklenen Haberler</h1>
+          {news.news.loading ? (
             <Spinner />
           ) : (
-            news.slice(0, 3).map((thenews, i) => (
+            news.news.slice(0, 3).map((thenews, i) => (
               <Link key={thenews.id} to={`/news/${thenews.id}`}>
                 <NewsCard {...thenews} />
               </Link>
